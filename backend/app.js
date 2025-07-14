@@ -1,8 +1,10 @@
+const { createClient } = require('@supabase/supabase-js');
 const express = require('express');
 const app = express();
 const port = 3000;
+const cors = require('cors')
 require('dotenv').config();
-const { createClient } = require('@supabase/supabase-js');
+
 
 // MIddlewares para ver las ultimas peticiones api
 function dataAPI(req, res, next){
@@ -11,6 +13,7 @@ function dataAPI(req, res, next){
     next()
 }
 
+app.use(cors())
 app.use(express.json())
 app.use(dataAPI)
 
