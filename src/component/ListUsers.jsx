@@ -28,11 +28,30 @@ function ListUsers(){
     
     return(
         <>
-        <div className="border-1 border-white rounded-lg p-4">
+        <div className="flex flex-col border-1 border-white rounded-lg p-4 w-[60%] h-[500px] overflow-y-scroll overflow-hidden ">
             {users.map(user =>(
-                <div>
-                    {user.name}
-                    {user.age}
+                <div className="flex gap-4 items-center w-full border-b-1 py-2">
+                    <img 
+                     src={user.url_img}
+                     className="w-[10%] h-auto rounded-lg "
+                     alt="" />
+
+                    <div className="flex flex-col">
+                         <span className="text-lg font-semibold">{user.name} {user.lastname}</span>
+                        <div className="flex gap-2">
+                         <span className="font-semibold">Pais :</span>
+                         <span>{user.location}</span>
+                        </div>
+                        <div className="flex gap-2">
+                         <span className="font-semibold">Edad: </span>
+                         <span>{user.age}</span>
+                        </div>
+                        <div className="flex gap-2">
+                         <span className="font-semibold">Sexo: </span>
+                         <span>{user.sex}</span>
+                        </div>
+                    </div>
+                    
                 </div>
             ))}
         </div>

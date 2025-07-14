@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     <Header/>
-    <main className='flex w-full min-h-dvh bg-[#1E1E1E] mt-10 justify-center items-center'>
-      <div>
+    <main className='flex w-full min-h-dvh bg-[#1E1E1E] justify-center items-center text-white'>
+      <div className='flex justify-center items-center w-full h-[10%]'>
         <ListUsers/>
       </div>
     </main>
