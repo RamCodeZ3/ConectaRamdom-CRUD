@@ -10,7 +10,7 @@ function Header(){
             onClick={handleDivClick}
             >
             <img src="././public/CR.png" alt="" className="size-10" />
-            <span className="font-semibold text-lg">CR</span>
+            <span className="font-bold text-lg">CR</span>
             </div>
              <div className="bg-[linear-gradient(to_right,#0051FF,#FF1194)] w-full h-0.5"></div>
         </header>
