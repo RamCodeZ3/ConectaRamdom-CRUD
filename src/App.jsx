@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './component/Header'
 import ListUsers from './component/ListUsers'
+import Title from './component/Title'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +10,8 @@ function App() {
     <>
     <Header/>
     <main className='flex w-full min-h-dvh bg-[#1E1E1E] justify-center items-center text-white'>
-      <div className='flex justify-center items-center w-full h-[10%]'>
+      <Title/>
+      <div className='flex justify-center items-center w-auto h-[10%]'>
         <ListUsers/>
       </div>
     </main>
