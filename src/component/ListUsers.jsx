@@ -8,7 +8,7 @@ function ListUsers(){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        fetch("http://localhost:3000/users")
+        fetch("http://localhost:3000/usersrandom")
         .then(response=>{
             if(!response.ok){
                 throw new Error("Hubo un error al momento de obtener los datos")

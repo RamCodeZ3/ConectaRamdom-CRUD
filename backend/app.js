@@ -37,6 +37,14 @@ app.get('/users', async(req, res) =>{
      res.json(data)
 })
 
+// Endpoint para obtener 12 usuario random
+app.get('/usersrandom', async(req, res) =>{
+    const {data, error} = await supabase.rpc('get_random_users'); 
+     
+     if (error) return res.status(500).json({error: error.message});
+     res.json(data)
+})
+
 // Endopoit para obtener solo al usuario especificado
 app.get('/user/:id', async(req, res) =>{
     const {data, error} = await supabase
