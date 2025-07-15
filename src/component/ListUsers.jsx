@@ -30,31 +30,16 @@ function ListUsers(){
     
     return(
         <>
-        <div className="flex flex-col gap-2 border-1 border-white rounded-lg p-4 w-[50%] h-[500px] overflow-y-scroll overflow-hidden ">
+        <div className="grid grid-cols-4 gap-2 border-1 border-white rounded-lg p-4 max-w-[1000px] mx-auto h-[500px] justify-items-center ">
             {users.map(user =>(
-                <div className={`flex gap-4 items-center w-full border-1 rounded-lg py-2 px-2 ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}` } 
+                <div className={`flex flex-col gap-1.5 items-center border-1 rounded-lg py-2 px-1 
+                    ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}` } 
                 onClick={()=>navigate(`/user/${user.id}`)}>
                     <img 
                      src={user.url_img}
-                     className="w-[15%] h-auto rounded-lg "
+                     className="w-[80%] h-auto rounded-lg "
                      alt="" />
-
-                    <div className="flex flex-col">
-                         <span className="text-lg font-semibold">{user.name} {user.lastname}</span>
-                        <div className="flex gap-2">
-                         <span className="font-semibold">Pais :</span>
-                         <span>{user.location}</span>
-                        </div>
-                        <div className="flex gap-2">
-                         <span className="font-semibold">Edad: </span>
-                         <span>{user.age}</span>
-                        </div>
-                        <div className="flex gap-2">
-                         <span className="font-semibold">Sexo: </span>
-                         <span>{user.sex}</span>
-                        </div>
-                    </div>
-                    
+                    <span className="font-semibold text-xs">{user.name} {user.lastname}</span>
                 </div>
             ))}
         </div>
