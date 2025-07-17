@@ -29,7 +29,7 @@ function UserInfo(){
     if (error) return <span>Error: {error}</span>
     return(
         <>
-            <main className="flex justify-center items-center text-white">
+            <main className="flex w-full justify-center items-center text-white">
                 <div
                     className={`flex flex-col gap-5 border-1 rounded-lg p-4 w-[45%] 
                         ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}
