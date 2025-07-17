@@ -1,6 +1,8 @@
-import { UserRoundPlus } from 'lucide-react';
+import { User } from 'lucide-react';
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Header(){
+    const navigate = useNavigate();
     function handleDivClick(){
         window.location.reload()
     }
@@ -18,10 +20,11 @@ function Header(){
             </div>
             <div className="flex gap-4">
                 <a href="">Inicio</a>
+                <a href="">Añadir</a>
                 <a href="">Usuarios</a>
             </div>
-             <button className='flex gap-2 items-center justify-center bg-[linear-gradient(to_right,#0051FF,#FF1194)] px-2 py-1 rounded-lg'>
-               <UserRoundPlus/> Añadir
+             <button onClick={()=> navigate('/createUser')} className='flex gap-2 items-center justify-center cursor-pointer bg-[linear-gradient(to_right,#0051FF,#FF1194)] px-2 py-1 rounded-lg'>
+               <User/> <span className='font-semibold'>Ramdom</span>
              </button>
         </header>
        </div>
