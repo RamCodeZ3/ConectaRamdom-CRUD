@@ -1,3 +1,5 @@
+import { UserRoundPlus } from 'lucide-react';
+
 function Header(){
     function handleDivClick(){
         window.location.reload()
@@ -5,16 +7,24 @@ function Header(){
 
     return(
         <>
-        <header className="fixed w-full top-0 left-0  p-2 text-white m-0 items-center">
-            <div className="flex items-center bg-gradient-to-r from-[#0051FF] to-[#FF1194] bg-clip-text text-transparent cursor-pointer w-[105px]"
+        <div className="fixed flex justify-center items-center w-full h-18">
+
+        <header className="flex w-[90%] top-0 left-0 py-1 px-2  text-white items-center justify-around border-1 border-[#543CDC] rounded-lg bg-white/10 backdrop-blur-2xl">
+            <div className="flex items-center bg-gradient-to-r from-[#0051FF] to-[#FF1194] bg-clip-text text-transparent cursor-pointer w-auto"
             onClick={handleDivClick}
             >
             <img src="././public/CR.png" alt="" className="size-10" />
-            <span className="font-bold text-lg">CR</span>
+            <span className="font-bold text-lg">ConectaRandom</span>
             </div>
-             <div className="bg-[linear-gradient(to_right,#0051FF,#FF1194)] w-full h-0.5"></div>
+            <div className="flex gap-4">
+                <a href="">Inicio</a>
+                <a href="">Usuarios</a>
+            </div>
+             <button className='flex gap-2 items-center justify-center bg-[linear-gradient(to_right,#0051FF,#FF1194)] px-2 py-1 rounded-lg'>
+               <UserRoundPlus/> Añadir
+             </button>
         </header>
-       
+       </div>
         </>
     )
 }

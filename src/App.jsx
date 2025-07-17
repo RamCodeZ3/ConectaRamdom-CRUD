@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Header/>
-    <main className='flex gap-3 w-full min-h-dvh bg-[#1E1E1E] justify-center items-center text-white'>
+    <main className='flex gap-3 w-full min-h-dvh bg-[#0d031d] justify-center items-center text-white'>
       <Title/>
       <div className='flex justify-center items-center w-auto h-[10%]'>
         <ListUsers/>

@@ -2,7 +2,7 @@ function Title(){
     return(
         <>
         <div className="w-1/2 p-0.5 bg-[linear-gradient(to_right,#0051FF,#FF1194)] rounded-lg">
-            <div className="flex flex-col gap-6 text-center w-full justify-center items-center h-[470px] rounded-lg bg-neutral-900 ">
+            <div className="flex flex-col gap-6 text-center w-full justify-center items-center h-[470px] rounded-lg bg-[#0d031d]/85">
             <span className="font-semibold text-5xl text-transparent bg-clip-text" style={{
            backgroundImage: 'linear-gradient(to right, #0051FF, #FF1194)'
          }}>ConectaRandom</span>
