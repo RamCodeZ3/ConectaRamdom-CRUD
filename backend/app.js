@@ -60,9 +60,9 @@ app.get('/user/:id', async(req, res) =>{
 // Endpoint para añadir un nuevo usuario a la lista
 app.post('/create', async(req, res) =>{
     const {data, error} = await supabase
-    const {name, lastname, age, email, location, sex, url_img} = req.body
+    const {name, lastname, birthdate, age, email, location, sex, url_img, hobby} = req.body
     .from("users")
-    .insert([{name, lastname, age, email, location, sex, url_img}]);
+    .insert([{name, lastname,birthdate ,age, email, location, sex, url_img, hobby}]);
     
     if (error) return res.status(500).json({error: error.message});
      res.json(data)
@@ -71,9 +71,9 @@ app.post('/create', async(req, res) =>{
 // Endpoint para editar a los usuarios que ya estan en la lista
 app.put('/update/:id', async(req, res) =>{
     const {data, error} = await supabase
-    const {name, lastname, age, email, location, sex, url_img} = req.body
+    const {name, lastname, birthdate, age, email, location, sex, url_img,hobby} = req.body
     .from("users")
-    .update([{name, lastname, age, email, location, sex, url_img}])
+    .update([{name, lastname,birthdate, age, email, location, sex, url_img, hobby}])
     .eq("id", req.params.id)
     
     if (error) return res.status(500).json({error: error.message});
