@@ -15,7 +15,7 @@ function App() {
         <Title/>
       <div><ListUsers/></div>
       </div>
-      <div>
+      <div className='w-full h-auto'>
         <CreateUser/>
       </div>
     </main>
