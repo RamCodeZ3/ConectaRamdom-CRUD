@@ -3,6 +3,7 @@ import Header from './component/Header'
 import ListUsers from './component/ListUsers'
 import Title from './component/Title'
 import CreateUser from './component/CreateUser'
+import CardTemplate from './component/CardTemplate'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       </div>
       <div className='w-full h-auto'>
         <CreateUser/>
+        <CardTemplate/>
       </div>
     </main>
     </>
