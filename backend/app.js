@@ -58,15 +58,22 @@ app.get('/user/:id', async(req, res) =>{
 })
 
 // Endpoint para añadir un nuevo usuario a la lista
-app.post('/create', async(req, res) =>{
-    const {data, error} = await supabase
-    const {name, lastname, birthdate, age, email, location, sex, url_img, hobby} = req.body
+app.post('/create', async (req, res) => {
+  // Paso 1: Extraer datos del body
+  const { name, lastname, birthdate, age, email, location, sex, url_img, hobby } = req.body;
+
+  // Paso 2: Insertar en Supabase
+  const { data, error } = await supabase
     .from("users")
-    .insert([{name, lastname,birthdate ,age, email, location, sex, url_img, hobby}]);
-    
-    if (error) return res.status(500).json({error: error.message});
-     res.json(data)
-})
+    .insert([
+      { name, lastname, birthdate, age, email, location, sex, url_img, hobby }
+    ]);
+
+  if (error) return res.status(500).json({ error: error.message });
+  
+  res.json(data);
+});
+
 
 // Endpoint para editar a los usuarios que ya estan en la lista
 app.put('/update/:id', async(req, res) =>{

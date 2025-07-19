@@ -1,23 +1,71 @@
+import { useState } from 'react';
 import { User } from 'lucide-react';
 
 function CreateUser(){
+    const [formData, setFormData] = useState({
+        name: '',
+        lastname:'',
+        birthdate: '',
+        age: '',
+        email: '',
+        location: '',
+        sex: '',
+        url_img: '',
+        hobby: ''
+    })
+
+    const handleChange = (e)=>{
+        const {name, value} = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Convertir edad a número antes de enviar
+    const dataToSend = {
+      ...formData,
+      edad: parseInt(formData.edad)
+    }
+    try{
+        const response = await fetch("http://localhost:3000/create",{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(dataToSend),
+        });
+        const data = await response.json();
+        console.log("Los datos se enviaron correctamente")
+
+    }catch(error){
+        console.error('Error:', error);
+    }
+}
     return(
         <>
        <div className="flex w-full h-auto justify">
          <div className="flex items-center w-1/2 p-0.5 rounded-lg bg-[#7c26cd38] border-[#7D26CD] border-1 px-4 py-2">
-            <form action="" className="flex flex-col gap-2 h-auto w-full rounded-lg ">
+            <form onSubmit={handleSubmit} action="" className="flex flex-col gap-2 h-auto w-full rounded-lg ">
             <div className="flex gap-2">
                 <div className="flex flex-col flex-1">
                 <span className="font-semibold">Nombre:</span>
                 <input 
                 type="text"
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="nombre del usuario"
                 className="bg-[#0d031d8a] rounded-md px-2 py-1"
                 />
             </div>
             <div className="flex flex-col flex-1">
                 <span className="font-semibold">Apellido:</span>
-                <input 
+                <input
+                name='lastname'
+                value={formData.lastname}
+                onChange={handleChange} 
                 type="text"
                 placeholder="apellido del usuario"
                 className="bg-[#0d031d8a] rounded-md px-2 py-1"
@@ -27,14 +75,20 @@ function CreateUser(){
             <div className="flex gap-2">
                 <div className="flex flex-col flex-1">
                 <span className="font-semibold">Fecha de nacimiento:</span>
-                <input 
+                <input
+                name='birthdate'
+                value={formData.birthdate}
+                onChange={handleChange}
                 type="date"
                 className="bg-[#0d031d8a] rounded-md px-2 py-1"
                 />
             </div>
             <div className="flex flex-col flex-1">
                 <span className="font-semibold">Edad:</span>
-                <input 
+                <input
+                name='age'
+                value={formData.age} 
+                onChange={handleChange}
                 type="number"
                 min={0}
                 placeholder=""
@@ -45,7 +99,10 @@ function CreateUser(){
             <div className="flex gap-2">
                 <div className="flex flex-col flex-1">
                 <span className="font-semibold">Email:</span>
-                <input 
+                <input
+                name='email'
+                value={formData.email} 
+                onChange={handleChange}
                 type="text"
                 placeholder="email del usuario"
                 className="bg-[#0d031d8a] rounded-md px-2 py-1"
@@ -53,7 +110,10 @@ function CreateUser(){
             </div>
             <div className="flex flex-col flex-1">
                 <span className="font-semibold">Pais:</span>
-                <input 
+                <input
+                name='location'
+                value={formData.location} 
+                onChange={handleChange}
                 type="text"
                 placeholder="pais donde vive"
                 className="bg-[#0d031d8a] rounded-md px-2 py-1"
@@ -62,14 +122,21 @@ function CreateUser(){
             </div>
                 <div className="flex flex-col">
                     <span className="font-semibold">Genero:</span>
-                    <select name="" id="" className="bg-[#0d031d8a] rounded-md px-2 py-1">
+                    <select 
+                    name='sex'
+                    value={formData.sex}
+                    onChange={handleChange}
+                    className="bg-[#0d031d8a] rounded-md px-2 py-1">
                         <option value="M">Masculino</option>
                         <option value="F">Femenino</option>
                     </select>
                 </div>
                 <div className="flex flex-col">
                     <span className="font-semibold">Imagen:</span>
-                    <input 
+                    <input
+                    name='url_img'
+                    value={formData.url_img} 
+                    onChange={handleChange}
                     type="text" 
                     placeholder="url"
                     className="bg-[#0d031d8a] rounded-md px-2 py-1"
@@ -78,6 +145,9 @@ function CreateUser(){
                 <div className="flex flex-col">
                     <span className="font-semibold">Hobby:</span>
                     <textarea
+                    name='hobby'
+                    value={formData.hobby}
+                    onChange={handleChange}
                     placeholder="habla sobre ti"
                     className="bg-[#0d031d8a] rounded-md px-2 py-1 h-20"
                     />
