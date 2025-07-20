@@ -18,7 +18,6 @@ function App() {
       </div>
       <div className='w-full h-auto'>
         <CreateUser/>
-        <CardTemplate/>
       </div>
     </main>
     </>
