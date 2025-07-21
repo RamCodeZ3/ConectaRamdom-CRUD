@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ButtonReturn from "../component/ButtonReturn";
 
 function UserInfo(){
     const [user, setUser] = useState([]);
@@ -30,6 +31,7 @@ function UserInfo(){
     return(
         <>
             <main className="flex w-full justify-center items-center text-white">
+                <ButtonReturn/>
                 <div
                     className={`flex flex-col gap-5 border-1 rounded-lg p-4 w-[45%] 
                         ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}
