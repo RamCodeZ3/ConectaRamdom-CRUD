@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Header from './component/Header'
-import ListUsers from './component/ListUsers'
+import UsersRandom from './component/UsersRandom'
 import Title from './component/Title'
 import CreateUser from './component/CreateUser'
-import CardTemplate from './component/CardTemplate'
+import ListUsers from './component/UsersRandom'
+import GetUserAll from './component/GetUserAll'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,13 +13,16 @@ function App() {
     <>
     <Header/>
     <main className='flex flex-col gap-10 w-full min-h-dvh justify-center items-center mt-25'>
-      <div className='flex justify-center items-center w-auto h-auto'>
+      <section id='start' className='flex justify-center items-center w-auto h-auto'>
         <Title/>
-      <div><ListUsers/></div>
-      </div>
-      <div className='w-full h-auto'>
+      <div><UsersRandom/></div>
+      </section>
+      <section id="list" className='w-full h-auto'>
+        <GetUserAll/>
+      </section>
+      <section id='add' className='w-full h-auto'>
         <CreateUser/>
-      </div>
+      </section>
     </main>
     </>
   )
