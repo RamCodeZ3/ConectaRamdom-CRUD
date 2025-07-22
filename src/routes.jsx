@@ -17,7 +17,7 @@ const routes = [
         element: <UserInfo/>
     },
     {
-        path: '/editUser',
+        path: '/editUser/:id',
         element: <EditUser/>
     }
         ]
