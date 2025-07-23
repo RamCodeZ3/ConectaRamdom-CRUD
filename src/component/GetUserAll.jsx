@@ -39,7 +39,7 @@ function GetUserAll(){
         {users.map((user) => (
           <div
             key={user.id}
-            className={`flex items-center justify-center border rounded-lg px-0.5 py-2 cursor-pointer transition-all max-h-[100px] w-auto duration-300 hover:scale-105
+            className={`flex items-center z-1 justify-center border rounded-lg px-0.5 py-2 cursor-pointer transition-all max-h-[100px] w-auto duration-300 hover:scale-105
               ${
                 user.sex == "M"
                   ? "bg-[#287eff1c] border-[#0051FF] hover:bg-[#287eff50]"
@@ -55,7 +55,9 @@ function GetUserAll(){
           </div>
         ))}
       </div>
-      <img src="../public/CR.png" alt="" />
+      <div className="flex w-full h-full absolute justify-center items-center">
+        <img src="../public/CR.png" alt="" className="size-80 z-0 opacity-20" />
+      </div>
     </div>
         </>
     )
