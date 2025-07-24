@@ -76,16 +76,28 @@ app.post('/create', async (req, res) => {
 
 
 // Endpoint para editar a los usuarios que ya estan en la lista
-app.put('/update/:id', async(req, res) =>{
-    const {data, error} = await supabase
-    const {name, lastname, birthdate, age, email, location, sex, url_img,hobby} = req.body
+app.put('/update/:id', async (req, res) => {
+  const { name, lastname, birthdate, age, email, location, sex, url_img, hobby } = req.body;
+
+  const { data, error } = await supabase
     .from("users")
-    .update([{name, lastname,birthdate, age, email, location, sex, url_img, hobby}])
-    .eq("id", req.params.id)
-    
-    if (error) return res.status(500).json({error: error.message});
-     res.json(data)
-})
+    .update({
+      name,
+      lastname,
+      birthdate,
+      age,
+      email,
+      location,
+      sex,
+      url_img,
+      hobby
+    })
+    .eq("id", req.params.id);
+
+  if (error) return res.status(500).json({ error: error.message });
+
+  res.json(data);
+});
 
 // Endpoint para eleminar al usuario especificado
 app.delete('/delete/:id', async(req, res) =>{

@@ -55,9 +55,7 @@ function GetUserAll(){
           </div>
         ))}
       </div>
-      <div className="flex w-full h-full absolute justify-center items-center">
-        <img src="../public/CR.png" alt="" className="size-80 z-0 opacity-20" />
-      </div>
+      
     </div>
         </>
     )
