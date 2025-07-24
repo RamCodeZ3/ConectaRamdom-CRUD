@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Pencil, Trash2 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 import ButtonReturn from "../component/ButtonReturn";
+import PanelDelete from "../component/PanelDelete";
 
 function UserInfo(){
     const [user, setUser] = useState([]);
@@ -10,6 +11,15 @@ function UserInfo(){
     const [error, setError] = useState(null);
     const { id } = useParams();
     const navigate = useNavigate()
+    const [isPanelActive, setIsPanelActive] = useState(false);
+
+    const handleTogglePanel = () => {
+    setIsPanelActive(!isPanelActive);
+  };
+
+  const handleCancel = () => {
+    setIsPanelActive(false);
+  };
 
     useEffect(()=>{
         fetch(`http://localhost:3000/user/${id}`)
@@ -35,6 +45,7 @@ function UserInfo(){
         <>
             <main className="flex w-full justify-center items-center text-white">
                 <ButtonReturn/>
+                <PanelDelete activate={isPanelActive} onCancel={handleCancel} />
                 <div
                     className={`flex flex-col gap-5 border-1 rounded-lg p-4 w-[45%] 
                         ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}
@@ -54,7 +65,7 @@ function UserInfo(){
                             <Pencil className="hover:text-blue-500 duration-300"/>
                        </button>
 
-                        <button className="cursor-pointer">
+                        <button className="cursor-pointer" onClick={handleTogglePanel}>
                             <Trash2 className="hover:text-red-500 duration-300"/>
                         </button>
                      </div>
