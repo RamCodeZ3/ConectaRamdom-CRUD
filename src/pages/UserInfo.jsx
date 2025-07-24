@@ -57,7 +57,13 @@ function UserInfo(){
                      alt=""
                      className="size-30 rounded-lg" 
                      />
-                     <span className="font-semibold text-2xl">Hola soy {user.name} {user.lastname}</span>
+                     <div className="flex flex-col">
+                        <span className="font-semibold text-2xl">Hola soy {user.name} {user.lastname}</span>
+                        <div className="flex gap-1 text-sm text-neutral-400">
+                            <span className="font-semibold">ID:</span>
+                            <span>{user.id}</span>
+                        </div>
+                     </div>
                      </div>
 
                      <div className="flex gap-4 h-full">

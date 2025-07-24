@@ -31,12 +31,12 @@ function PanelDelete({ activate, onCancel }) {
       }`}
     >
       <div className="flex flex-col gap-10 bg-[#15121a] p-4 rounded-lg w-auto h-[140px] border-1 border-[#543CDC]">
-        <span className="font-semibold">¿Está seguro que quieres eliminar a ese usuario?</span>
-        <div className="flex gap-8">
-          <button className="cursor-pointer" onClick={onCancel}>
+        <span className="font-semibold ">¿Está seguro que quieres eliminar a este usuario?</span>
+        <div className="flex gap-2.5">
+          <button className="cursor-pointer bg-[#462cda] px-2 py-1.5 rounded-lg font-semibold" onClick={onCancel}>
             Cancelar
           </button>
-          <button className="cursor-pointer" onClick={()=>{
+          <button className="cursor-pointer bg-[#3a1ddd] px-2 py-1.5 rounded-lg font-semibold" onClick={()=>{
             handleClickButton()
             navigate(-1)
             }}>
