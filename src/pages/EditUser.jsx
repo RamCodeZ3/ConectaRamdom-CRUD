@@ -69,7 +69,7 @@ function EditUser(){
         <>
         <ButtonReturn/>
         <div className="flex gap-10 w-full h-auto justify-center items-center">
-         <div className={`flex items-center w-1/2 p-0.5 rounded-lg border-1 px-4 py-2 ${formData.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}>
+         <div className={`flex gap-4 items-center w-[60%] p-0.5 rounded-lg border-1 px-4 py-2 ${formData.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}>
             <form onSubmit={handleSubmit} action="" className="flex flex-col gap-2 h-auto w-full rounded-lg ">
             <div className="flex gap-2">
                 <div className="flex flex-col flex-1">
@@ -176,15 +176,22 @@ function EditUser(){
                     className="bg-[#0d031d8a] rounded-md px-2 py-1 h-20"
                     />
                 </div>
+                
                 <button type="submit" className="flex gap-2 justify-center items-center bg-[linear-gradient(to_right,#0051FF,#FF1194)] rounded-lg py-2">
                     <User/>
                     <span className="font-semibold">Editar usuario</span>
                 </button>
         </form>
+                <div >
+                  <img 
+                     src={formData.url_img} 
+                     alt="" 
+                     className={`p-2 rounded-lg border-1 w-50 h-auto ${formData.sex == "M" ? ' border-[#0051FF]' : ' border-[#FF1194]'}`} 
+                  />
+                  
+                </div>
          </div>
-         <div className={`p-4 rounded-lg border-1 ${formData.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}>
-            <img src={formData.url_img} alt="" />
-         </div>
+         
        </div>
         </>
     )
