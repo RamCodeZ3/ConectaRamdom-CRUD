@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
 import { useParams } from "react-router-dom";
-import ButtonReturn from '../component/ButtonReturn';
+import ButtonReturn from '../component/ComponentReusable/ButtonReturn';
 
 function EditUser(){
     const [formData, setFormData] = useState({
