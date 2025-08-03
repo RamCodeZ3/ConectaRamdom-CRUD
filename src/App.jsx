@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import Header from './component/ComponentReusable/Header'
-import UsersRandom from './component/section/start/UsersRandom'
-import Title from './component/section/start/Title'
-import CreateUser from './component/section/add/CreateUser'
-import ListUsers from './component/section/start/UsersRandom'
-import GetUserAll from './component/section/list/GetUserAll'
+import Header from './common/Header'
+import UsersRandom from './section/start/UsersRandom'
+import Title from './section/start/Title'
+import CreateUser from './section/add/CreateUser'
+import GetUserAll from './section/list/GetUserAll'
 
 function App() {
   const [count, setCount] = useState(0)

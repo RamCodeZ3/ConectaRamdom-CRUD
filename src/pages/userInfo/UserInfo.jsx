@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Pencil, Trash2 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
-import ButtonReturn from "../component/ButtonReturn";
-import PanelDelete from "../component/PanelDelete";
+import ButtonReturn from '../../common/ButtonReturn';
+import PanelDelete from "./component/PanelDelete";
 
 function UserInfo(){
     const [user, setUser] = useState([]);

@@ -1,7 +1,7 @@
 import App from './App'
-import UserInfo from './pages/UserInfo'
+import UserInfo from './pages/userInfo/UserInfo'
 import EditUser from './pages/EditUser'
-import Layout from './component/Layout'
+import Layout from './common/Layout'
 
 const routes = [
     {
