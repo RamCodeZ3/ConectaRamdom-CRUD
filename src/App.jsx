@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import Header from './common/Header'
 import UsersRandom from './section/start/UsersRandom'
 import Title from './section/start/Title'
-import CreateUser from './section/add/CreateUser'
+import SectionAdd from './section/add/SectionAdd'
 import GetUserAll from './section/list/GetUserAll'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -20,7 +18,7 @@ function App() {
         <GetUserAll/>
       </section>
       <section id='add' className='w-full h-auto'>
-        <CreateUser/>
+        <SectionAdd/>
       </section>
     </main>
     </>
