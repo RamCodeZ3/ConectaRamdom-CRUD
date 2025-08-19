@@ -30,7 +30,7 @@ function ListUsers(){
     
     return(
         <>
-        <div className="grid grid-cols-4 gap-2 rounded-lg p-4 max-w-[1000px] mx-auto h-[500px] justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 sm:gap-2 rounded-lg p-4 max-w-[1000px] mx-auto h-[500px] justify-items-center">
             {users.map(user =>(
                 <div className={`flex flex-col gap-1.5 items-center border-1 rounded-lg py-2 px-1 cursor-pointer transition-all duration-300 hover:scale-105
                     ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF] hover:bg-[#287eff50] ' : 'bg-[#ff3ba718] border-[#FF1194] hover:bg-[#ff3ba749]'}` } 
@@ -38,7 +38,7 @@ function ListUsers(){
                     <img 
                      src={user.url_img}
                      className="w-[80%] h-auto rounded-lg "
-                     alt="" />
+                     alt="./user.png" />
                     <span className="font-semibold text-xs">{user.name} {user.lastname}</span>
                 </div>
             ))}

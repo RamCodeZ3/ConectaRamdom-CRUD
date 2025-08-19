@@ -29,13 +29,13 @@ function GetUserAll(){
     if (error) return <span>Error: {error}</span>
     return(
         <>
-         <div className=" flex flex-col gap-5 w-full mx-auto h-[500px] overflow-y-auto p-2 py-6 bg-[#7c26cd0a] border-[#543CDC] border-b-1 border-t-1">
+         <div className=" flex flex-col gap-5 w-full mx-auto h-[400px] md:h-[500px] overflow-y-auto p-2 py-6 bg-[#7c26cd0a] border-[#543CDC] border-b-1 border-t-1">
             <div className="flex w-full justify-center py-2 h-auto items-center">
                 <span className="font-semibold text-4xl text-transparent bg-clip-text" style={{
            backgroundImage: 'linear-gradient(to right, #0051FF, #FF1194)'
          }}>Lista de usuarios</span>
             </div>
-      <div className="grid grid-cols-12 gap-2">
+      <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-3 sm:gap-2">
         {users.map((user) => (
           <div
             key={user.id}

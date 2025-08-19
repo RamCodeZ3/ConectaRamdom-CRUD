@@ -18,7 +18,7 @@ function Header(){
             <img src="././public/CR.png" alt="" className="size-10" />
             <span className="font-bold text-lg">ConectaRandom</span>
             </div>
-            <div className="flex gap-4">
+            <div className="hidden md:flex gap-4">
                 <a href='#start'>Inicio</a>
                 <a href='#add'>Añadir</a>
                 <a href="">Usuarios</a>

@@ -46,9 +46,9 @@ function CreateUser(){
     return(
         <>
        <div className="flex w-full h-auto justify-center items-center">
-         <div className="flex items-center w-1/2 p-0.5 rounded-lg bg-[#7c26cd38] border-[#7D26CD] border-1 px-4 py-2">
+         <div className="flex items-center w-[90%] md:w-1/2 p-0.5 rounded-lg bg-[#7c26cd38] border-[#7D26CD] border-1 px-4 py-2">
             <form onSubmit={handleSubmit} action="" className="flex flex-col gap-2 h-auto w-full rounded-lg ">
-            <div className="flex gap-2">
+            <div className="flex flex-col md:flex-row gap-2">
                 <div className="flex flex-col flex-1">
                 <span className="font-semibold">Nombre:</span>
                 <input 
@@ -72,7 +72,7 @@ function CreateUser(){
                 />
             </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-col md:flex-row">
                 <div className="flex flex-col flex-1">
                 <span className="font-semibold">Fecha de nacimiento:</span>
                 <input
@@ -96,7 +96,7 @@ function CreateUser(){
                 />
             </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-col md:flex-row">
                 <div className="flex flex-col flex-1">
                     <span className="font-semibold">Genero:</span>
                     <select 
