@@ -9,7 +9,7 @@ function Title(){
         <p className="text-md text-neutral-300">
             ¿Te gustaría hablar con alguien nuevo sin saber quién será? ConectaRandom te conecta al instante con personas aleatorias de todo el mundo. Sin presiones, sin filtros, solo charlas genuinas y la posibilidad de hacer nuevos amigos en cada encuentro.
         </p>
-        <img src="././Public/CR.png" alt="" className="size-60" />
+        <img src="./CR.png" alt="" className="size-60" />
         </div>
         </div>
         </>

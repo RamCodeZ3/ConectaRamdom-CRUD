@@ -15,7 +15,7 @@ function Header(){
             <div className="flex items-center bg-gradient-to-r from-[#0051FF] to-[#FF1194] bg-clip-text text-transparent cursor-pointer w-auto"
             onClick={handleDivClick}
             >
-            <img src="././public/CR.png" alt="" className="size-10" />
+            <img src="/CR.png" alt="" className="size-10" />
             <span className="font-bold text-lg">ConectaRandom</span>
             </div>
             <div className="hidden md:flex gap-4">

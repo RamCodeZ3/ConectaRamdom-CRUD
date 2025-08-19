@@ -1,9 +1,33 @@
+import { useState, useEffect } from 'react'
 import Header from './common/Header'
 import Start from './section/start/Start'
 import SectionAdd from './section/add/SectionAdd'
 import GetUserAll from './section/list/GetUserAll'
+import Loading from './common/Loading'
+import Error from './common/Error'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    // Simulación de carga de datos o inicialización
+    const timer = setTimeout(() => {
+      // Simula un error para probar (puedes ponerlo a false para que no falle)
+      const hasError = false;
+
+      if (hasError) {
+        setError(true);
+      } else {
+        setLoading(false);
+      }
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if(loading) return <Loading/>
+  if(error) return <Error/>
 
   return (
     <>

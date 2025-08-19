@@ -4,6 +4,8 @@ import { Pencil, Trash2 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 import ButtonReturn from '../../common/ButtonReturn';
 import PanelDelete from "./component/PanelDelete";
+import Loading from "../../common/Loading";
+import Error from "../../common/Error";
 
 function UserInfo(){
     const [user, setUser] = useState([]);
@@ -39,15 +41,15 @@ function UserInfo(){
         })
     },[])
 
-    if (loading) return <span>Cargando usuarios</span>
-    if (error) return <span>Error: {error}</span>
+    if(loading) return <Loading/>
+    if(error) return <Error/>
     return(
         <>
             <main className="flex w-full justify-center items-center text-white">
                 <ButtonReturn/>
                 <PanelDelete activate={isPanelActive} onCancel={handleCancel} />
                 <div
-                    className={`flex flex-col gap-5 border-1 rounded-lg p-4 w-[45%] 
+                    className={`flex flex-col gap-5 border-1 rounded-lg p-4 w-[90%] md:w-[45%] 
                         ${user.sex == "M" ? 'bg-[#287eff1c] border-[#0051FF]' : 'bg-[#ff3ba718] border-[#FF1194]'}`}
                 >
                     
