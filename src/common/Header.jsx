@@ -10,6 +10,11 @@ function Header(){
         window.location.reload()
     }
 
+    function handleButtonClick(){
+      const usersrandom= Math.floor(Math.random() * 22) + 1
+      navigate(`/user/${usersrandom}`)
+    }
+
     return(
         <>
         <div className="fixed flex flex-col justify-center items-center w-full h-18 z-10">
@@ -21,12 +26,12 @@ function Header(){
             <img src="/CR.png" alt="" className="size-10" />
             <span className="font-bold text-lg">ConectaRandom</span>
             </div>
-            <div className="hidden md:flex gap-4 font-semibold">
+            <div className="hidden md:flex gap-8 font-semibold">
                 <a href='#start' className='cursor-pointer hover:text-[#543CDC] transition-all duration-300'>Inicio</a>
                 <a href="#list" className='cursor-pointer hover:text-[#543CDC] transition-all duration-300'>Usuarios</a>
                 <a href='#add' className='cursor-pointer hover:text-[#543CDC] transition-all duration-300'>Añadir</a>
             </div>
-             <button onClick={()=> navigate('/createUser')} className='flex gap-2 items-center justify-center cursor-pointer bg-[linear-gradient(to_right,#0051FF,#FF1194)] px-2 py-1 rounded-lg'>
+             <button onClick={handleButtonClick} className='flex gap-2 items-center justify-center cursor-pointer bg-[linear-gradient(to_right,#0051FF,#FF1194)] px-2 py-1 rounded-lg'>
                <User/> <span className='font-semibold'>Ramdom</span>
              </button>
              <div className='md:hidden' onClick={()=>{setActivate(!activate)}}>
